@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure--3p0o%r_6u5zh9=m3c)jeda4t*!=!3+(y&5hpcimm-!b@iz0+7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ "*"]
+ALLOWED_HOSTS = [
+    "smart-ingredient.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -149,3 +153,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 import os
 
 CREATE_SUPERUSER = os.environ.get("CREATE_SUPERUSER") == "true"
+
+import os
+SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-dev-key")
