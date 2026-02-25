@@ -146,3 +146,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+import os
+
+CREATE_SUPERUSER = os.environ.get("CREATE_SUPERUSER") == "true"
