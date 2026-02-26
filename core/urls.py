@@ -14,5 +14,6 @@ urlpatterns = [
     path('analyze/', analyze_ingredients),
     path('history/', scan_history),
     path("health/", health),
+    path("", home, name="home"),
 
 ]

@@ -171,3 +171,23 @@ from rest_framework.response import Response
 @api_view(["GET"])
 def health(request):
     return Response({"status": "ok"})
+from django.shortcuts import render
+from .ai_service import generate_ai_explanation
+
+def home(request):
+    result = None
+
+    if request.method == "POST":
+        ingredients = request.POST.get("ingredients")
+
+        # Temporary values (we improve later)
+        user_profile = "General user with no specific allergies"
+        warnings = ingredients  # simple pass-through for now
+
+        result = generate_ai_explanation(
+            user_profile=user_profile,
+            ingredients=ingredients,
+            warnings=warnings
+        )
+
+    return render(request, "core/index.html", {"result": result})
