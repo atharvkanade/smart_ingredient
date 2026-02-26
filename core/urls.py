@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .views import analyze_ingredients
 from .views import scan_history
 from .views import health
-
+from .views import home 
 
 
 urlpatterns = [
